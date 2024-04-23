@@ -1,0 +1,24 @@
+{
+  "name": "passgen",
+  "version": "1.0.0",
+  "description": "generate a random password",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "na"
+  },
+  "keywords": [
+    "passgen"
+  ],
+  "author": "hendrickmanullang",
+  "license": "ISC",
+  "bin": {
+    "passgen": "./bin/index.js"
+  },
+  "dependencies": {
+    "yargs": "^17.7.2"
+  }
+}
