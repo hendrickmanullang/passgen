@@ -10,7 +10,7 @@ console.log(`${pass} is copied to your clipboard`);
 pbcopy(pass);
 
 function pbcopy(data) {
-  var proc = require("child_process").spawn("pbcopy");
+  const proc = require("child_process").spawn("pbcopy");
   proc.stdin.write(data);
   proc.stdin.end();
 }
