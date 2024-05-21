@@ -31,9 +31,8 @@ passgen
 
 A random 12 char alpha/numeric/symbol password will be copied to your clipboard.
 
-`ctrl + v` to reveal the password/paste into your web form.
-
-Run the `passgen` command again if you need to re-generate a password until it satisfies the site's requirement.
+* `ctrl + v` to reveal the password/paste into your web form.
+* Run the `passgen` command again if you need to re-generate a password until it satisfies the site's requirement.
 
 ### Optional: Custom length password
 
