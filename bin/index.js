@@ -24,23 +24,28 @@ const options = {
 
 const args = process.argv.slice(2);
 
-// Parsing command line arguments
 args.forEach((arg, index) => {
   for (const option in options) {
-    if (options[option].tokens.includes(arg)) {
-      if (option === "length") {
-        // Handle length argument
-        const lengthIndex = index + 1;
-        if (lengthIndex < args.length && !isNaN(args[lengthIndex])) {
-          options.length.val = parseInt(args[lengthIndex], 10);
-        }
-      } else {
-        // Flip boolean options (disable them if they were enabled)
-        options[option].val = !options[option].val;
-      }
+    if (!options[option].tokens.includes(arg)) continue;
+
+    if (option === "length") {
+      handleLengthOption(index);
+    } else {
+      toggleBooleanOption(option);
     }
   }
 });
+
+function handleLengthOption(index) {
+  const lengthIndex = index + 1;
+  if (lengthIndex < args.length && !isNaN(args[lengthIndex])) {
+    options.length.val = parseInt(args[lengthIndex], 10);
+  }
+}
+
+function toggleBooleanOption(option) {
+  options[option].val = !options[option].val;
+}
 
 // Ensure at least one character set is selected
 if (
